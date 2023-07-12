@@ -1,6 +1,6 @@
 import unittest
 import config
-from hamming import hamming
+from hamming import hamming_distance
 
 class HammingTestCase(unittest.TestCase):
 
@@ -14,7 +14,7 @@ class HammingTestCase(unittest.TestCase):
 
         for input_str1, input_str2, expected_output in test_cases:
             with self.subTest(input_str1=input_str1, input_str2=input_str2):
-                self.assertEqual(hamming(input_str1, input_str2), expected_output)
+                self.assertEqual(hamming_distance(input_str1, input_str2), expected_output)
 
     def test_non_string_arguments(self):
 
@@ -26,12 +26,13 @@ class HammingTestCase(unittest.TestCase):
         for arg1, arg2, expected_error in test_cases:
             with self.subTest(arg1=arg1, arg2=arg2):
                 with self.assertRaises(expected_error):
-                    hamming(arg1, arg2)
+                    hamming_distance(arg1, arg2)
 
     def test_unequal_length_strings(self):
 
         with self.assertRaises(ValueError):
-            hamming("abc", "defg")
+            hamming_distance("abc", "defg")
+
 
 if __name__ == '__main__':
     unittest.main()

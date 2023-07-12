@@ -3,7 +3,7 @@ This module contains a function for calculating the Hamming distance between two
 """
 
 
-def hamming(string1: str, string2: str) -> int:
+def hamming_distance(string1: str, string2: str) -> int:
     """
     Calculate the Hamming distance between two strings.
 
@@ -33,7 +33,7 @@ def hamming(string1: str, string2: str) -> int:
         0
     """
     if not isinstance(string1, str) or not isinstance(string2, str):
-        raise TypeError("Arguments must always be of type string.")
+        raise TypeError("Both arguments must be strings.")
 
     if len(string1) != len(string2):
         raise ValueError("In hamming distance, the lengths of the argument strings must match.")
