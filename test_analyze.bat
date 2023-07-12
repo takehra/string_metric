@@ -4,8 +4,8 @@ REM Command to execute unit tests
 set unit_test_command=python -m unittest discover -s tests
 
 REM Commands to run static analysis
-set static_analysis_command=pylint src
-set flake8_command=flake8 src
+set static_analysis_command=pylint .\src
+set flake8_command=flake8 .\src
 
 REM Execute unit tests
 echo Running unit tests...

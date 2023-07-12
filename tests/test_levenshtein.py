@@ -8,9 +8,17 @@ class LevenshteinDistanceTests(unittest.TestCase):
         result = levenshtein_distance("hello", "hello")
         self.assertEqual(result, 0)
 
-    def test_empty_string(self):
-        result = levenshtein_distance("", "")
-        self.assertEqual(result, 0)
+    def test_empty_strings(self):
+        subtests = [
+            ("", "", 0),
+            ("hello", "", 5),
+            ("", "world", 5)
+        ]
+        
+        for s1, s2, expected in subtests:
+            with self.subTest(s1=s1, s2=s2, expected=expected):
+                result = levenshtein_distance(s1, s2)
+                self.assertEqual(result, expected)
 
     def test_insertion(self):
         result = levenshtein_distance("kitten", "sitting")
