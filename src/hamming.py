@@ -18,8 +18,12 @@ def hamming(string1: str, string2: str) -> int:
     Raises:
         TypeError: If either `string1` or `string2` is not of type string.
         ValueError: If the lengths of `string1` and `string2` are not equal.
-    
-    Complexit
+
+    Complexity:
+        time: O(n), where n is the length of the input strings.
+        This is because the function iterates over the characters of the strings once to compare them.
+
+        space: O(1), as it only uses a constant amount of additional space to store the Hamming distance.
 
     Examples:
         >>> hamming("cat", "hat")
