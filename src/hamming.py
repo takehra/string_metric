@@ -2,6 +2,7 @@
 This module contains a function for calculating the Hamming distance between two strings.
 """
 
+
 def hamming(string1: str, string2: str) -> int:
     """
     Calculate the Hamming distance between two strings.
